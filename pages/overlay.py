@@ -50,6 +50,7 @@ class OverlayPage(QMainWindow):
         self.page_display_build = self.findChild(QWidget, "page_3")
         self.slider_opacity = self.findChild(QSlider, "horizontalSlider")
         self.verticalLayout_9 = self.findChild(QVBoxLayout, "verticalLayout_9")
+        self.verticalLayout_10 = self.findChild(QVBoxLayout, "verticalLayout_10")
         
         # Define our pages
         self.stackedWidget.addWidget (self.page_overlay)

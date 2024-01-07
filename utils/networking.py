@@ -13,3 +13,5 @@ class RequestsApi:
     def get_all_builds(self):
         return (requests.get(f"{self.base_url}{API_GET_ALL_BUILDS}")).json()
     
+    def get_all_steps_of_build_by_build_id(self, build_id):
+        return ((requests.get(f"{self.base_url}/step/{build_id}")).json())
