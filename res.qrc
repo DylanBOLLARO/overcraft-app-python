@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="images">
-    <file>images/close_png.png</file>
-    <file>images/close.svg</file>
-  </qresource>
-</RCC>

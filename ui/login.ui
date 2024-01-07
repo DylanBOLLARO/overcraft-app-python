@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
@@ -199,13 +202,13 @@ QPushButton:hover {
      <string>Password</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="button_close_app">
+   <widget class="QPushButton" name="button_close_app_login">
     <property name="geometry">
      <rect>
       <x>550</x>
       <y>0</y>
-      <width>51</width>
-      <height>51</height>
+      <width>50</width>
+      <height>50</height>
      </rect>
     </property>
     <property name="font">
@@ -214,7 +217,9 @@ QPushButton:hover {
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">QPushButton:hover {
+	background-color: #0d1325;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -232,8 +237,6 @@ QPushButton:hover {
    </widget>
   </widget>
  </widget>
- <resources>
-  <include location="../res.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
