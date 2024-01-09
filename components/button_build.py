@@ -18,22 +18,26 @@ class ButtonBuild(QPushButton):
         self.clicked.connect(self.button_clicked)
         
         # Style
-        self.setStyleSheet("QPushButton {"
-            "background-color: #030711; "
-            "border: 2px solid #1d283a; "
-            "padding:5px;"
-            "color: #dfe2e5; "
-            "}"
-            "QPushButton:hover {"
-            "background-color: #0d1325; "
-            "}")
+        self.setStyleSheet('''
+            QPushButton {
+                background-color: #030711;
+                border: 2px solid #1d283a;
+                padding: 10px;
+                color: #dfe2e5;
+            }
+            
+            QPushButton:hover {
+                background-color: #0d1325;
+            }
+        ''')
         self.setFont(QFont('Roboto', 14))
         
     def button_clicked(self):
         self.overlay_instance.get_build(self.build["id"])
         self.overlay_instance.label_name_build.setText(self.build['title'])
         self.steps = self.overlay_instance.request_instance.get_all_steps_of_build_by_build_id(self.build["id"])
-        
+        self.overlay_instance.button_start_scrolling.show()
+
         while self.overlay_instance.verticalLayout_10.count() > 0:
             item = self.overlay_instance.verticalLayout_10.takeAt(0)
             widget = item.widget()
@@ -41,5 +45,7 @@ class ButtonBuild(QPushButton):
                 widget.deleteLater()
         
         if len(self.steps) > 0:
-            for element in self.steps:
+            for index, element in enumerate(self.steps):
+                if index > 5:
+                    return
                 self.overlay_instance.verticalLayout_10.addWidget(LabelStep(element))

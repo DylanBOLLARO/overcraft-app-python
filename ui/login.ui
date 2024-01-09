@@ -84,7 +84,7 @@ QLineEdit:focus {
 </string>
     </property>
     <property name="text">
-     <string/>
+     <string>v@gmail.com</string>
     </property>
     <property name="placeholderText">
      <string/>
@@ -119,7 +119,7 @@ QLineEdit:focus {
 </string>
     </property>
     <property name="text">
-     <string/>
+     <string>vipalisk</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>

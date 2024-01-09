@@ -13,8 +13,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(400, 700)
-        Form.setStyleSheet("background-color: \"#030711\";\n"
-"border-radius:10;")
+        Form.setStyleSheet("border-radius:10;")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(Form)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setSpacing(0)
@@ -33,8 +32,8 @@ class Ui_Form(object):
         self.page_1.setObjectName("page_1")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.page_1)
         self.verticalLayout_6.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetMinimumSize)
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setContentsMargins(10, 10, 10, 10)
+        self.verticalLayout_6.setSpacing(10)
         self.verticalLayout_6.setObjectName("verticalLayout_6")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetMinimumSize)
@@ -45,7 +44,11 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(20)
         self.button_open_settings.setFont(font)
-        self.button_open_settings.setStyleSheet("QPushButton:hover {\n"
+        self.button_open_settings.setStyleSheet("QPushButton {\n"
+"    background-color: #030711;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
 "    background-color: #0d1325;\n"
 "}")
         self.button_open_settings.setText("")
@@ -61,7 +64,8 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_7.setFont(font)
-        self.label_7.setStyleSheet("color: \"#f8faff\";")
+        self.label_7.setStyleSheet("color: \"#f8faff\";\n"
+"background-color: #030711;")
         self.label_7.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_7.setObjectName("label_7")
         self.horizontalLayout_3.addWidget(self.label_7)
@@ -71,7 +75,11 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(20)
         self.button_close_app_overlay.setFont(font)
-        self.button_close_app_overlay.setStyleSheet("QPushButton:hover {\n"
+        self.button_close_app_overlay.setStyleSheet("QPushButton {\n"
+"    background-color: #030711;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
 "    background-color: #0d1325;\n"
 "}")
         self.button_close_app_overlay.setText("")
@@ -83,8 +91,8 @@ class Ui_Form(object):
         self.horizontalLayout_3.addWidget(self.button_close_app_overlay)
         self.verticalLayout_6.addLayout(self.horizontalLayout_3)
         self.verticalLayout_9 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_9.setContentsMargins(30, 30, 30, 30)
-        self.verticalLayout_9.setSpacing(20)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setSpacing(10)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
         self.verticalLayout_6.addLayout(self.verticalLayout_9)
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
@@ -93,20 +101,26 @@ class Ui_Form(object):
         self.stackedWidget.addWidget(self.page_1)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.page_3.setStyleSheet("")
         self.page_3.setObjectName("page_3")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.page_3)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setContentsMargins(10, 10, 10, 10)
+        self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName("verticalLayout")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setSpacing(10)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.button_display_build_back = QtWidgets.QPushButton(parent=self.page_3)
         self.button_display_build_back.setMinimumSize(QtCore.QSize(50, 50))
         self.button_display_build_back.setMaximumSize(QtCore.QSize(50, 50))
-        self.button_display_build_back.setStyleSheet("QPushButton:hover {\n"
+        self.button_display_build_back.setStyleSheet("QPushButton {\n"
+"    background-color: #030711;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
 "    background-color: #0d1325;\n"
 "}")
         self.button_display_build_back.setText("")
@@ -122,36 +136,59 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_name_build.setFont(font)
-        self.label_name_build.setStyleSheet("color: \"#f8faff\";")
+        self.label_name_build.setStyleSheet("color: \"#f8faff\";\n"
+"background-color: #030711;")
         self.label_name_build.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_name_build.setObjectName("label_name_build")
         self.horizontalLayout.addWidget(self.label_name_build)
-        self.widget_3 = QtWidgets.QWidget(parent=self.page_3)
-        self.widget_3.setMinimumSize(QtCore.QSize(50, 50))
-        self.widget_3.setMaximumSize(QtCore.QSize(50, 50))
-        self.widget_3.setObjectName("widget_3")
-        self.horizontalLayout.addWidget(self.widget_3)
         self.horizontalLayout.setStretch(1, 1)
         self.verticalLayout_8.addLayout(self.horizontalLayout)
         self.verticalLayout.addLayout(self.verticalLayout_8)
         self.verticalLayout_10 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10.setSpacing(10)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
-        spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_10.addItem(spacerItem1)
         self.verticalLayout.addLayout(self.verticalLayout_10)
-        self.verticalLayout.setStretch(1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 542, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout.addItem(spacerItem1)
+        self.button_start_scrolling = QtWidgets.QPushButton(parent=self.page_3)
+        self.button_start_scrolling.setMinimumSize(QtCore.QSize(50, 50))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(20)
+        self.button_start_scrolling.setFont(font)
+        self.button_start_scrolling.setStyleSheet("QPushButton {\n"
+"    background-color: \"#f8faff\";\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: \"#dfe2e5\";\n"
+"}\n"
+"")
+        self.button_start_scrolling.setObjectName("button_start_scrolling")
+        self.verticalLayout.addWidget(self.button_start_scrolling)
+        self.label_timer_scrolling = QtWidgets.QLabel(parent=self.page_3)
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(28)
+        self.label_timer_scrolling.setFont(font)
+        self.label_timer_scrolling.setStyleSheet("color: \"#f8faff\";\n"
+"background-color: #030711;")
+        self.label_timer_scrolling.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_timer_scrolling.setObjectName("label_timer_scrolling")
+        self.verticalLayout.addWidget(self.label_timer_scrolling)
         self.stackedWidget.addWidget(self.page_3)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setEnabled(True)
         self.page_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.page_2.setObjectName("page_2")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.page_2)
-        self.verticalLayout_5.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetMinimumSize)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setContentsMargins(10, 10, 10, 10)
+        self.verticalLayout_5.setSpacing(10)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_5.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetMinimumSize)
+        self.horizontalLayout_5.setSpacing(10)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.button_settings_back = QtWidgets.QPushButton(parent=self.page_2)
         self.button_settings_back.setMinimumSize(QtCore.QSize(50, 50))
@@ -159,7 +196,11 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(20)
         self.button_settings_back.setFont(font)
-        self.button_settings_back.setStyleSheet("QPushButton:hover {\n"
+        self.button_settings_back.setStyleSheet("QPushButton {\n"
+"    background-color: #030711;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
 "    background-color: #0d1325;\n"
 "}")
         self.button_settings_back.setText("")
@@ -174,30 +215,32 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_6.setFont(font)
-        self.label_6.setStyleSheet("color: \"#f8faff\";")
+        self.label_6.setStyleSheet("color: \"#f8faff\";\n"
+"background-color: #030711;")
         self.label_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_6.setObjectName("label_6")
         self.horizontalLayout_5.addWidget(self.label_6)
-        self.widget_2 = QtWidgets.QWidget(parent=self.page_2)
-        self.widget_2.setMinimumSize(QtCore.QSize(50, 50))
-        self.widget_2.setMaximumSize(QtCore.QSize(50, 50))
-        self.widget_2.setObjectName("widget_2")
-        self.horizontalLayout_5.addWidget(self.widget_2)
         self.verticalLayout_5.addLayout(self.horizontalLayout_5)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setContentsMargins(20, 20, 20, 20)
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setSpacing(20)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label = QtWidgets.QLabel(parent=self.page_2)
-        self.label.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.label.setMinimumSize(QtCore.QSize(0, 75))
+        self.label.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label.setFont(font)
         self.label.setStyleSheet("color: \"#f8faff\";\n"
-"padding-left:30px")
+"background-color: #030711;\n"
+"padding: 10px;")
         self.label.setObjectName("label")
         self.verticalLayout_2.addWidget(self.label)
         self.horizontalSlider = QtWidgets.QSlider(parent=self.page_2)
+        self.horizontalSlider.setMinimumSize(QtCore.QSize(0, 50))
+        self.horizontalSlider.setStyleSheet("color: \"#f8faff\";\n"
+"background-color: #030711;\n"
+"padding: 10px;")
         self.horizontalSlider.setMinimum(20)
         self.horizontalSlider.setMaximum(100)
         self.horizontalSlider.setSingleStep(10)
@@ -211,19 +254,21 @@ class Ui_Form(object):
         self.verticalLayout_2.addWidget(self.horizontalSlider)
         self.verticalLayout_5.addLayout(self.verticalLayout_2)
         self.verticalLayout_7 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_7.setContentsMargins(20, 20, 20, 20)
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_7.setSpacing(20)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.label_2 = QtWidgets.QLabel(parent=self.page_2)
+        self.label_2.setMinimumSize(QtCore.QSize(0, 75))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: \"#f8faff\";\n"
-"padding-left:30px")
+"background-color: #030711;\n"
+"padding: 10px;")
         self.label_2.setObjectName("label_2")
         self.verticalLayout_7.addWidget(self.label_2)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setContentsMargins(20, 20, 20, 20)
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_2.setSpacing(20)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.button_set_small_size = QtWidgets.QPushButton(parent=self.page_2)
@@ -284,16 +329,15 @@ class Ui_Form(object):
         self.button_set_large_size.setObjectName("button_set_large_size")
         self.horizontalLayout_2.addWidget(self.button_set_large_size)
         self.verticalLayout_7.addLayout(self.horizontalLayout_2)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_7.addItem(spacerItem2)
         self.verticalLayout_5.addLayout(self.verticalLayout_7)
-        self.verticalLayout_5.setStretch(2, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_5.addItem(spacerItem2)
         self.stackedWidget.addWidget(self.page_2)
         self.verticalLayout_4.addWidget(self.stackedWidget)
         self.verticalLayout_3.addWidget(self.widget)
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -301,6 +345,8 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label_7.setText(_translate("Form", "OverCraft"))
         self.label_name_build.setText(_translate("Form", "build_title"))
+        self.button_start_scrolling.setText(_translate("Form", "START"))
+        self.label_timer_scrolling.setText(_translate("Form", "00:00"))
         self.label_6.setText(_translate("Form", "Settings page"))
         self.label.setText(_translate("Form", "Window opacity"))
         self.label_2.setText(_translate("Form", "Window size"))

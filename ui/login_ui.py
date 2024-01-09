@@ -46,7 +46,6 @@ class Ui_Form(object):
 "}\n"
 "\n"
 "")
-        self.lineEdit_email.setText("")
         self.lineEdit_email.setPlaceholderText("")
         self.lineEdit_email.setObjectName("lineEdit_email")
         self.lineEdit_password = QtWidgets.QLineEdit(parent=self.widget)
@@ -66,7 +65,6 @@ class Ui_Form(object):
 "}\n"
 "\n"
 "")
-        self.lineEdit_password.setText("")
         self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.lineEdit_password.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.lineEdit_password.setPlaceholderText("")
@@ -122,6 +120,8 @@ class Ui_Form(object):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.label.setText(_translate("Form", "OverCraft"))
+        self.lineEdit_email.setText(_translate("Form", "v@gmail.com"))
+        self.lineEdit_password.setText(_translate("Form", "vipalisk"))
         self.button_login.setText(_translate("Form", "Login"))
         self.label_2.setText(_translate("Form", "Email"))
         self.label_3.setText(_translate("Form", "Password"))
