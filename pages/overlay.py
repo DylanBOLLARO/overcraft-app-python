@@ -9,6 +9,7 @@ from PyQt5 import uic
 
 # Custom
 from components.button_build import ButtonBuild
+from components.timer import Timer
 
 class Size(Enum):
     SMALL = {'width': 350, 'height': 600}
@@ -16,13 +17,15 @@ class Size(Enum):
     LARGE = {'width': 450, 'height': 850}
     
 class OverlayPage(QMainWindow):
-    def __init__(self, request_instance, timer_instance, application_instance):
+    def __init__(self, request_instance, application_instance):
         super(OverlayPage, self).__init__()
         self.request_instance = request_instance
-        self.timer_instance = timer_instance
         self.application_instance = application_instance
         self.builds = None
-
+        self.timer_instance = Timer()
+        self.number_of_element_to_display = 8
+        self.label_list_references = []
+        
         # Load the ui file
         uic.loadUi("./ui/overlay.ui", self)
         self.setAttribute(Qt.WA_TranslucentBackground)
@@ -86,6 +89,7 @@ class OverlayPage(QMainWindow):
     def button_start_timer(self):
         self.timer_instance.start_timer()
         self.button_start_scrolling.hide()
+
 
     def button_back_main_page(self):
         self.stackedWidget.setCurrentWidget(self.page_overlay)

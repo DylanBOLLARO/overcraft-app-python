@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtGui import QFont
 
 # Custom
-from components.label_step import LabelStep
+from components.label_step import ContainerLabelStep
 
 class ButtonBuild(QPushButton):
     def __init__(self, build, overlay_instance):
@@ -10,6 +10,7 @@ class ButtonBuild(QPushButton):
         self.build = build
         self.overlay_instance = overlay_instance
         self.steps = None
+
         
         # Set the button text to the title from self.build
         self.setText(self.build['title'])
@@ -33,19 +34,35 @@ class ButtonBuild(QPushButton):
         self.setFont(QFont('Roboto', 14))
         
     def button_clicked(self):
+        # Disconnect any existing connections
+        self.overlay_instance.timer_instance.timer.timeout.disconnect()
+        # Connect the timeout signal to the refresh_label_displayed method
+        self.overlay_instance.timer_instance.timer.timeout.connect(self.overlay_instance.timer_instance.update_timer)
+        self.overlay_instance.timer_instance.timer.timeout.connect(self.refresh_label_displayed)
+        
         self.overlay_instance.get_build(self.build["id"])
         self.overlay_instance.label_name_build.setText(self.build['title'])
-        self.steps = self.overlay_instance.request_instance.get_all_steps_of_build_by_build_id(self.build["id"])
+        self.steps = sorted(self.overlay_instance.request_instance.get_all_steps_of_build_by_build_id(self.build["id"]), key=lambda x: x['position'])
         self.overlay_instance.button_start_scrolling.show()
-
+        
         while self.overlay_instance.verticalLayout_10.count() > 0:
             item = self.overlay_instance.verticalLayout_10.takeAt(0)
             widget = item.widget()
             if widget is not None:
                 widget.deleteLater()
-        
-        if len(self.steps) > 0:
-            for index, element in enumerate(self.steps):
-                if index > 5:
-                    return
-                self.overlay_instance.verticalLayout_10.addWidget(LabelStep(element))
+                
+        self.refresh_label_displayed()
+                
+    def refresh_label_displayed(self):
+        self.overlay_instance.timer_instance.timer_delta = sum(1 for d in self.steps if 'timer' in d and d['timer'] < self.overlay_instance.timer_instance.time_counter)
+        # Clear the existing labels from the layout
+        for i in reversed(range(self.overlay_instance.verticalLayout_10.count())):
+            self.overlay_instance.verticalLayout_10.itemAt(i).widget().setParent(None)
+
+        # Create and add LabelStep instances to the layout based on self.steps
+        for index, element in enumerate(self.steps):
+            if index >= 0+self.overlay_instance.timer_instance.timer_delta and index < self.overlay_instance.number_of_element_to_display+self.overlay_instance.timer_instance.timer_delta:
+                label_step = ContainerLabelStep(element)
+                self.overlay_instance.label_list_references.append(label_step)
+                self.overlay_instance.verticalLayout_10.addWidget(label_step)
+            

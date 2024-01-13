@@ -7,6 +7,7 @@ class Timer(QWidget):
         self.timer = QTimer()
         self.time_counter = 0
         self.timer.timeout.connect(self.update_timer)
+        self.timer_delta = 0
 
     def define_label(self, QLabel=None):
         self.label_timer_scrolling = QLabel

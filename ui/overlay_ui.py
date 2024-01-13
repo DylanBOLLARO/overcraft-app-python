@@ -146,7 +146,7 @@ class Ui_Form(object):
         self.verticalLayout.addLayout(self.verticalLayout_8)
         self.verticalLayout_10 = QtWidgets.QVBoxLayout()
         self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_10.setSpacing(10)
+        self.verticalLayout_10.setSpacing(5)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.verticalLayout.addLayout(self.verticalLayout_10)
         spacerItem1 = QtWidgets.QSpacerItem(20, 542, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)

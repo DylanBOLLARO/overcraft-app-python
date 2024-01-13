@@ -332,9 +332,9 @@ background-color: #030711;</string>
            </layout>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_10" stretch="">
+           <layout class="QVBoxLayout" name="verticalLayout_10">
             <property name="spacing">
-             <number>10</number>
+             <number>5</number>
             </property>
             <property name="leftMargin">
              <number>0</number>
